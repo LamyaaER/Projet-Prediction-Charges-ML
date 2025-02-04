@@ -61,5 +61,5 @@ docker run -p 5000:5000 prediction-charges
 Ce projet est sous licence MIT.
 
 ---
-**Auteur** : [Lamyaa Errechaki](https://github.com/LamyaaER)
+**Auteur** : [Lamyaa ER-RECHAKI](https://github.com/LamyaaER)
 

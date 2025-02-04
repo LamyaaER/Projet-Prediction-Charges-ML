@@ -1,80 +1,65 @@
-# Industrialisation d'un Modèle Machine Learning
+# Projet Prediction Charges ML
 
-Ce projet vise à industrialiser un modèle de Machine Learning pour prédire les frais d'hospitalisation des patients en fonction de plusieurs paramètres démographiques et de santé.
+Ce projet est une application web permettant de prédire les charges à partir de données spécifiques en utilisant le Machine Learning.
 
-## 📌 Objectif
-Construire une application web où les utilisateurs peuvent fournir des informations sur un patient via un formulaire, et obtenir une estimation des frais d'hospitalisation grâce à un modèle de régression.
+## 📌 Description
 
-## 🛠️ Technologies Utilisées
-- **Python** 🐍
-- **PyCaret** pour l'entraînement et le déploiement du modèle
-- **Flask** pour créer l'application Web
-- **Docker** pour conteneuriser l'application
-- **Azure** pour le déploiement du service Web
-- **GitHub** pour la gestion du code source
+L'application est développée en **Python** avec **Flask** pour l'interface web et **PyCaret** pour l'entraînement et la prédiction du modèle.
 
-## 📂 Structure du Projet
+- **Développement** : Flask pour le backend et HTML/CSS pour l'affichage.
+- **Machine Learning** : PyCaret pour l'entraînement et la sélection du meilleur modèle.
+- **Docker** : Conteneurisation de l'application pour faciliter son déploiement.
+- **Azure Machine Learning** : Déploiement du modèle sur Azure.
+
+## 🛠️ Installation et Exécution
+
+### 1️⃣ Prérequis
+- Python 3.9+
+- pip et virtualenv
+- Docker (optionnel pour l’exécution en conteneur)
+
+### 2️⃣ Installation
+Cloner le dépôt :
+```bash
+git clone https://github.com/LamyaaER/Projet-Prediction-Charges-ML.git
+cd Projet-Prediction-Charges-ML
 ```
-📁 indus_projet_machine_learning
-│── 📁 static
-│── 📁 templates
-│── 📁 venv
-│── app.py  # Code principal de l'application Flask
-│── Dockerfile  # Fichier pour créer l'image Docker
-│── my_best_model.pkl  # Modèle sauvegardé
-│── requirements.txt  # Liste des dépendances
-│── README.md  # Documentation du projet
+Créer un environnement virtuel et installer les dépendances :
+```bash
+python -m venv venv
+source venv/bin/activate  # Sur Mac/Linux
+venv\Scripts\activate  # Sur Windows
+pip install -r requirements.txt
 ```
 
-## 🚀 Installation & Exécution Locale
-1. **Cloner le dépôt**
-   ```bash
-   git clone https://github.com/ton-utilisateur/ton-repo.git
-   cd ton-repo
-   ```
+### 3️⃣ Exécution
+Lancer l’application :
+```bash
+python app.py
+```
+L’application sera accessible sur `http://127.0.0.1:5000/`.
 
-2. **Créer un environnement virtuel et installer les dépendances**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # Sur Linux/macOS
-   venv\Scripts\activate  # Sur Windows
-   pip install -r requirements.txt
-   ```
+## 📦 Utilisation avec Docker
+Build et exécution du conteneur Docker :
+```bash
+docker build -t prediction-charges .
+docker run -p 5000:5000 prediction-charges
+```
 
-3. **Exécuter l'application localement**
-   ```bash
-   python app.py
-   ```
-   L'application sera accessible sur `http://127.0.0.1:5000`
+## 🚀 Déploiement sur Azure Machine Learning
+1. Création d’un workspace sur Azure ML.
+2. Enregistrement du modèle PyCaret.
+3. Déploiement sous forme de service web.
+4. Test avec une requête API.
 
-## 🐳 Déploiement avec Docker
-1. **Construire l'image Docker**
-   ```bash
-   docker build -t ton-utilisateur/ton-image:latest .
-   ```
-2. **Exécuter le conteneur**
-   ```bash
-   docker run -dit -p 5000:5000 ton-utilisateur/ton-image
-   ```
+## 📸 Captures d'écran
+![Interface de l'application](images/01_Interface.PNG)
+![Exécution du modèle](images/02_Prediction.PNG)
+![Déploiement sur Azure](images/03_deploiement_azure.PNG)
 
-## ☁️ Déploiement sur Azure
-1. **Créer un registre de conteneurs sur Azure**
-2. **Se connecter à Azure Container Registry (ACR)**
-   ```bash
-   docker login ton-registre.azurecr.io
-   ```
-3. **Pousser l'image sur Azure**
-   ```bash
-   docker tag ton-utilisateur/ton-image ton-registre.azurecr.io/ton-image
-   docker push ton-registre.azurecr.io/ton-image
-   ```
-4. **Créer une Web App sur Azure et la lier au conteneur**
-
-## 📌 Liens Utiles
-- PyCaret: [Documentation](https://pycaret.readthedocs.io)
-- Flask: [Documentation](https://flask.palletsprojects.com/)
-- Docker: [Documentation](https://docs.docker.com/)
-- Azure: [Portail](https://portal.azure.com)
+## 📜 Licence
+Ce projet est sous licence MIT.
 
 ---
-🔹 _Auteur: Lamyaa Errechaki_
+**Auteur** : [Lamyaa Errechaki](https://github.com/LamyaaER)
+
